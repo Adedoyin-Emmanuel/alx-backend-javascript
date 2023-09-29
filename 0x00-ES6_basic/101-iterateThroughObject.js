@@ -4,9 +4,9 @@ export default function iterateThroughObject(reportWithIterator) {
 
   for (const names of arr) {
     for (const name of names) {
-      name.split(",");
+      name.split(',');
       newArr.push(name);
     }
   }
-  return newArr.join(" | ");
+  return newArr.join(' | ');
 }
