@@ -9,7 +9,7 @@ const VALID_MAJORS = ['CS', 'SWE'];
  * Contains the student-related route handlers.
  */
 class StudentsController {
-  static getAllStudents(request, response) {
+  static getAllStudents (request, response) {
     const dataPath = process.argv.length > 2 ? process.argv[2] : '';
 
     readDatabase(dataPath)
@@ -31,7 +31,7 @@ class StudentsController {
           responseParts.push([
             `Number of students in ${field}: ${group.length}.`,
             'List:',
-            group.map((student) => student.firstname).join(', '),
+            group.map((student) => student.firstname).join(', ')
           ].join(' '));
         }
         response.status(200).send(responseParts.join('\n'));
@@ -43,7 +43,7 @@ class StudentsController {
       });
   }
 
-  static getAllStudentsByMajor(request, response) {
+  static getAllStudentsByMajor (request, response) {
     const dataPath = process.argv.length > 2 ? process.argv[2] : '';
     const { major } = request.params;
 
